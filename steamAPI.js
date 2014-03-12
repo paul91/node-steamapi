@@ -10,43 +10,42 @@ function steamAPI(key) {
     this.endpointDomain = 'http://api.steampowered.com';
 }
 
-steamAPI.prototype.getUser = function(steamid) {
+// ISteamUser
+steamAPI.prototype.GetFriendList = function(steamid) {
 
-    console.log('Getting user: ' + steamid + ' with key: ' + this.key);
+}
 
-    console.time('Get User.');
+steamAPI.prototype.GetPlayerBans = function(steamid) {
 
-    var options = {
-        url: this.endpointDomain + '/ISteamUser/GetPlayerSummaries/v0002/?key=' + this.key + '&steamids=' + steamid
-    }
+}
 
-    request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          obj = JSON.parse(body);
-          console.timeEnd('Get User');
-          console.log(obj.response.players[0].personaname);
-        }
-    });
+steamAPI.prototype.GetPlayerSummaries = function(steamid) {
+
+}
+
+steamAPI.prototype.GetUserGroupList = function(steamid) {
+
+}
+
+steamAPI.prototype.resolveVanity = function(name) {
+
+}
+
+// IPlayerService
+steamAPI.prototype.GetRecentlyPlayedGames = function(steamid) {
 
 }
 
 steamAPI.prototype.getOwnedGames = function(steamid) {
 
-    console.log('Getting games for user: ' + steamid + ' with key: ' + this.key);
 
-    console.time('Get Owned.');
+}
 
-    var options = {
-        url: this.endpointDomain + '/IPlayerService/GetOwnedGames/v0001/?key=' + this.key + '&steamid=' + steamid
-    }
+steamAPI.prototype.GetSteamLevel = function(steamid) {
 
-    request(options, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-          obj = JSON.parse(body);
-          console.timeEnd('Get Owned');
-          console.log(obj.response.game_count);
-        }
-    });
+}
+
+steamAPI.prototype.GetBadges = function(steamid) {
 
 }
 
