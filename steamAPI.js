@@ -10,11 +10,10 @@ function steamAPI(key) {
     this.endpointDomain = 'http://api.steampowered.com';
 }
 
-steamAPI.request = function(options) {
+steamAPI.request = function(options, callback) {
     request(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-          obj = JSON.parse(body);
-          console.log(obj);
+          callback(body);
         }
     });
 }
@@ -86,7 +85,9 @@ steamAPI.prototype.resolveVanity = function(name) {
         }
     }
 
-    steamAPI.request(options)
+    steamAPI.request(options, function(result) {
+        console.log(result);
+    })
 
 }
 

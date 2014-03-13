@@ -1,15 +1,27 @@
-var api = require('./steamAPI');
+var request = require('request'),
+    config  = require('./config').steamapi;
 
-var steamScraper = new api.connection;
+function async(options, callback) {
+	console.log('Using: ' + options.url);
 
-steamScraper.resolveVanity('PieKingOne');
-steamScraper.resolveVanity('aaron123');
+	request(options, function(error, response, body) {
+		if (!error && response.statusCode == 200) {
+          callback(body);
+        }
+        else {
+        	console.log(error);
+        }
+	});
+}
 
-steamScraper.GetPlayerSummaries(76561197963635996);
-steamScraper.GetPlayerSummaries(76561197969671378);
+var options = {
+        url: config.endPoint + '/ISteamUser/ResolveVanityURL/v0001/',
+        qs: {
+            key: config.key,
+            vanityurl: 'PieKingOne'
+        }
+    }
 
-steamScraper.GetPlayerBans(76561197963635996);
-steamScraper.GetPlayerBans(76561197969671378);
-
-steamScraper.GetUserGroupList(76561197963635996);
-steamScraper.GetUserGroupList(76561197969671378);
+async(options, function(result) {
+	console.log(result);
+})
