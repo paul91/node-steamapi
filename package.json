@@ -1,11 +1,12 @@
 {
-  "name": "SteamAPITool",
+  "name": "node-steamapi",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node test.js"
   },
   "dependencies": {
-    "request": "*"
+    "request": "*",
+    "async": "*"
   }
 }
