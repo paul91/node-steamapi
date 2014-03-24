@@ -1,5 +1,3 @@
-config.json
-
 lib-cov
 *.seed
 *.log
@@ -15,3 +13,5 @@ results
 
 npm-debug.log
 node_modules
+
+config.js
