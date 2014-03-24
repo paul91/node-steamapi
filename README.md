@@ -7,9 +7,10 @@ node-steamapi - Steam API for Node.js
 var steamapi = require('steamapi');
 
 var credentials = {
-  apiKey = 'yourkey'
-}
-var api = steamapi(credentials)
+  apiKey: 'yourkey'
+};
+
+var api = steamapi(credentials);
 
 api.getPlayerSummaries(function(err, results) {
 
@@ -19,7 +20,6 @@ api.getPlayerSummaries(function(err, results) {
     qs: {
       steamids: '123456789'
     }
-  }
 });
 ```
 
