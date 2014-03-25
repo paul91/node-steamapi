@@ -1,6 +1,6 @@
 {
   "name": "steamapi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node demo.js"

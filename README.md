@@ -1,7 +1,7 @@
 node-steamapi - Steam API for Node.js
 ============
 
-```node steamapi``` provides a simple programmatic access to Steam's API.
+```node steamapi``` provides simple programmatic access to Steam's API.
 
 ```js
 var steamapi = require('steamapi');
@@ -26,4 +26,4 @@ api.ResolveVanityURL(function(err, results) {
 
 ## License
 
-`node-steamapi` is available under the Apache License, Version 2.0. See LICENSE for more details.
+```node-steamapi``` is available under the Apache License, Version 2.0. See LICENSE for more details.
