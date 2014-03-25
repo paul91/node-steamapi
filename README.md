@@ -12,13 +12,14 @@ var credentials = {
 
 var api = steamapi(credentials);
 
-api.getPlayerSummaries(function(err, results) {
+api.ResolveVanityURL(function(err, results) {
+  if(err) return console.error(err);
 
   console.log(results);
 
   }, {
     qs: {
-      steamids: '123456789'
+      vanityurl: 'PieKingOne'
     }
 });
 ```

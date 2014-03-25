@@ -3,4 +3,21 @@ var steam  = require('./lib/steamapi.js'),
 
 var api = steam(config);
 
-api.GetPlayerSummaries();
+api.ResolveVanityURL(function(err, results) {
+  if(err) return console.error(err);
+
+  api.GetPlayerSummaries(function(err, results) {
+    if(err) return console.error(err);
+
+    console.log(results.response.players.player[0].personaname);
+  }, {
+    qs: {
+      steamids: results.response.steamid
+    }
+  });
+
+}, {
+  qs: {
+    vanityurl: 'PieKingOne'
+  }
+});
