@@ -3,5 +3,4 @@ var steam  = require('./lib/steamapi.js'),
 
 var api = steam(config);
 
-api.test();
-api.test2();
+api.GetPlayerSummaries();
