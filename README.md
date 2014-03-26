@@ -15,12 +15,20 @@ var api = steamapi(credentials);
 api.ResolveVanityURL(function(err, results) {
   if(err) return console.error(err);
 
-  console.log(results);
+  api.GetPlayerSummaries(function(err, results) {
+    if(err) return console.error(err);
 
+    console.log(results.response.players[0].personaname);
   }, {
     qs: {
-      vanityurl: 'PieKingOne'
+      steamids: results.response.steamid
     }
+  });
+
+}, {
+  qs: {
+    vanityurl: 'PieKingOne'
+  }
 });
 ```
 

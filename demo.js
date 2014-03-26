@@ -9,7 +9,7 @@ api.ResolveVanityURL(function(err, results) {
   api.GetPlayerSummaries(function(err, results) {
     if(err) return console.error(err);
 
-    console.log(results.response.players.player[0].personaname);
+    console.log(results.response.players[0].personaname);
   }, {
     qs: {
       steamids: results.response.steamid
@@ -19,5 +19,15 @@ api.ResolveVanityURL(function(err, results) {
 }, {
   qs: {
     vanityurl: 'PieKingOne'
+  }
+});
+
+api.GetOwnedGames(function(err, results) {
+  if(err) return console.error(err);
+
+  console.log('Games owned: ' + results.response.game_count);
+}, {
+  qs: {
+    steamid: '76561197969671378'
   }
 });
