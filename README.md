@@ -1,7 +1,7 @@
 node-steamapi - Steam API for Node.js
 ============
 
-```node steamapi``` provides simple programmatic access to Steam's API.
+```node-steamapi``` provides simple programmatic access to Steam's API.
 
 ```js
 var steamapi = require('steamapi');
