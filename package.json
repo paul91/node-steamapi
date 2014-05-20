@@ -2,6 +2,7 @@
   "name": "steamapi",
   "version": "0.0.3",
   "private": true,
+  "main": "./lib/steamapi.js",
   "scripts": {
     "start": "node demo.js"
   },
