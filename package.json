@@ -10,6 +10,7 @@
     "request": "*",
     "underscore": "*",
     "mocha": "*",
-    "nock": "*"
+    "nock": "*",
+    "expect.js": "*"
   }
 }
